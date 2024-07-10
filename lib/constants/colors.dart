@@ -1,3 +1,5 @@
 import 'package:flutter/material.dart';
 
-Color lightBlue = Color.fromARGB(255, 54, 145, 224);
+const Color blue = Color(0xFF1C64EF);
+const Color backGroundColor = Color.fromARGB(255, 219, 219, 219);
+const Color white = Colors.white;

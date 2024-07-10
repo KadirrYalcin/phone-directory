@@ -8,7 +8,7 @@ final class LoginImage extends StatelessWidget {
     return Image.asset(
       //TODO: resize the image
       LoginController.loginImage,
-      height: MediaQuery.sizeOf(context).height * .3,
+      height: MediaQuery.sizeOf(context).height * .4,
     );
   }
 }

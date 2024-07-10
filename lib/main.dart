@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:phonedirectory/constants/colors.dart';
+import 'package:phonedirectory/controller/login_controller.dart';
+import 'package:provider/provider.dart';
 import 'pages/login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        //neden _ var _loginPageState yok
+        ChangeNotifierProvider(create: (_) => LoginController()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          scaffoldBackgroundColor: backGroundColor,
+          fontFamily: "Inter",
+          appBarTheme: const AppBarTheme(backgroundColor: backGroundColor)),
       title: 'My Phone Directory',
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }

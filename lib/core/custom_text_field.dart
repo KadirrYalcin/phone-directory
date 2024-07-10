@@ -1,28 +1,59 @@
 import 'package:flutter/material.dart';
 
-final class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.label, required this.controller});
-  final String label;
-  final TextEditingController controller;
+import '../constants/colors.dart';
 
+final class CustomTextField extends StatefulWidget {
+  CustomTextField(
+      {super.key,
+      required this.hintText,
+      required this.controller,
+      this.ishowable = false});
+  final String hintText;
+  final TextEditingController controller;
+  final bool ishowable;
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool isVisible = false;
   @override
   Widget build(BuildContext context) {
     MediaQuery.sizeOf(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(label),
-        TextField(
-          decoration: InputDecoration(
-              fillColor: Colors.grey[200],
-              filled: true,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5))),
-          controller: controller,
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: TextField(
+        obscureText: isVisible,
+        decoration: InputDecoration(
+          border: customTextfiledBorder(),
+          hintText: widget.hintText,
+          fillColor: white,
+          filled: true,
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+          suffixIcon: widget.ishowable ? eyeSuffix() : null,
+        ),
+        controller: widget.controller,
+      ),
     );
+  }
+
+  OutlineInputBorder customTextfiledBorder() {
+    return const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+        borderSide: BorderSide.none,
+        gapPadding: 10);
+  }
+
+  IconButton eyeSuffix() {
+    Icon openedEye = const Icon(Icons.visibility_off_rounded);
+    Icon closedEye = const Icon(Icons.remove_red_eye);
+    return IconButton(
+        onPressed: () {
+          isVisible = !isVisible;
+          setState(() {});
+        },
+        icon: isVisible ? openedEye : closedEye);
   }
 }

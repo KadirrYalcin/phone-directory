@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-
 import '../pages/register_page.dart';
 
-class LoginController {
-  static String loginImage = "assets/images/LoginImage1.png";
-  static String welcome = "Welcome to our Directory";
-  static String username = "Username";
-  static String password = "Pasword";
-  static String buttonTitle = "Login";
+class LoginController with ChangeNotifier {
+  static String loginImage = "assets/images/LoginImage.png";
+  static String welcome = "Giriş Yap";
+  static String username = "E-mail";
+  static String password = "Şifre";
+  static String buttonTitle = "Giriş yap";
+  static String checkboxTitle = "Beni Hatırla";
+  static String forgotPasswordTitle = "Şifremi Unuttum";
+  static String or = "Ya da";
+  static String clickhere = "Kayıt ol";
+  static String toRegister = "Hesabın yok mu?";
+  bool? rememberAgain = false;
 
   static TextEditingController usernameContoller = TextEditingController();
   static TextEditingController passwordContoller = TextEditingController();
@@ -18,5 +23,10 @@ class LoginController {
         MaterialPageRoute(
           builder: (context) => RegisterPage(),
         ));
+  }
+
+  void changeRemember(bool? Value) {
+    rememberAgain = Value;
+    notifyListeners();
   }
 }
