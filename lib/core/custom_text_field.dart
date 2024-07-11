@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 final class CustomTextField extends StatefulWidget {
-  CustomTextField(
+  const CustomTextField(
       {super.key,
       required this.hintText,
       required this.controller,
+      this.fillColor = white,
       this.ishowable = false});
   final String hintText;
   final TextEditingController controller;
   final bool ishowable;
+  final Color fillColor;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -28,7 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: InputDecoration(
           border: customTextfiledBorder(),
           hintText: widget.hintText,
-          fillColor: white,
+          fillColor: widget.fillColor,
           filled: true,
           contentPadding:
               const EdgeInsets.symmetric(vertical: 5, horizontal: 20),

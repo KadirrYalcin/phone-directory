@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import '../pages/register_page.dart';
+import 'home_page.dart';
 
 class LoginController with ChangeNotifier {
   static String loginImage = "assets/images/LoginImage.png";
-  static String welcome = "Giriş Yap";
-  static String username = "E-mail";
+  static String loginTitle = "Giriş Yap";
+  static String email = "E-mail";
   static String password = "Şifre";
   static String buttonTitle = "Giriş yap";
   static String checkboxTitle = "Beni Hatırla";
@@ -12,21 +13,27 @@ class LoginController with ChangeNotifier {
   static String or = "Ya da";
   static String clickhere = "Kayıt ol";
   static String toRegister = "Hesabın yok mu?";
+
   bool? rememberAgain = false;
 
   static TextEditingController usernameContoller = TextEditingController();
   static TextEditingController passwordContoller = TextEditingController();
 
-  static Future<dynamic> goToRegister(BuildContext context) {
-    return Navigator.pushReplacement(
+  void goToRegister(BuildContext context) {
+    Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => RegisterPage(),
+          builder: (context) => const RegisterPage(),
         ));
   }
 
-  void changeRemember(bool? Value) {
-    rememberAgain = Value;
+  void changeRemember(bool? value) {
+    rememberAgain = value;
     notifyListeners();
+  }
+
+  static void loginButtonFunc(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => const HomePage()));
   }
 }

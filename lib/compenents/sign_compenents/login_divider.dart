@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phonedirectory/controller/login_controller.dart';
 
+import '../../constants/colors.dart';
+
 class LoginDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,7 @@ class LoginDivider extends StatelessWidget {
         Expanded(
           child: Container(
             height: 1,
-            color: Colors.red,
+            color: blue,
           ),
         ),
         Padding(
@@ -18,7 +20,7 @@ class LoginDivider extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            color: Colors.red,
+            color: blue,
             height: 1,
           ),
         ),

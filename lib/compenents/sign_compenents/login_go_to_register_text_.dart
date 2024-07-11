@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:phonedirectory/constants/colors.dart';
 import 'package:phonedirectory/controller/login_controller.dart';
@@ -14,7 +13,9 @@ final class GoToRegisterTexts extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              LoginController().goToRegister(context);
+            },
             child: Text(
               LoginController.clickhere,
               style:

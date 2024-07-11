@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
-import '../../controller/login_controller.dart';
+import '../constants/colors.dart';
 
-class LoginButton extends StatelessWidget {
+final class CustomButton extends StatelessWidget {
+  final String buttonTitle;
+  final VoidCallback ontap;
+  const CustomButton(
+      {super.key, required this.buttonTitle, required this.ontap});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return GestureDetector(
-        onTap: () {},
+        onTap: ontap,
         child: Container(
             decoration: BoxDecoration(
                 color: blue, borderRadius: BorderRadius.circular(16)),
@@ -16,7 +19,7 @@ class LoginButton extends StatelessWidget {
             height: size.height * .06,
             child: Center(
                 child: Text(
-              LoginController.buttonTitle,
+              buttonTitle,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:phonedirectory/constants/colors.dart';
 import 'package:provider/provider.dart';
-
 import '../../controller/login_controller.dart';
 
 class RememberAndForgotPassword extends StatelessWidget {
@@ -9,6 +9,7 @@ class RememberAndForgotPassword extends StatelessWidget {
     return Row(
       children: [
         Checkbox(
+            activeColor: blue,
             value: context.watch<LoginController>().rememberAgain,
             onChanged: (value) {
               context.read<LoginController>().changeRemember(value);
@@ -32,7 +33,7 @@ class ForgotPassword extends StatelessWidget {
         onPressed: () {},
         child: Text(
           LoginController.forgotPasswordTitle,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: blue),
         ));
   }
 }

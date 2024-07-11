@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../controller/login_controller.dart';
+final class SignImage extends StatelessWidget {
+  final String imagePath;
 
-final class LoginImage extends StatelessWidget {
+  const SignImage({super.key, required this.imagePath});
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      //TODO: resize the image
-      LoginController.loginImage,
+      imagePath,
       height: MediaQuery.sizeOf(context).height * .4,
     );
   }
