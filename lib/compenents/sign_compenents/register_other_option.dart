@@ -20,7 +20,7 @@ class OtherOption extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(imagePath),
-            SizedBox(
+            const SizedBox(
               width: 4,
             ),
             Text(

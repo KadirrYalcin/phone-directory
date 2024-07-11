@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../pages/home_page.dart';
 import '../pages/register_page.dart';
-import 'home_page.dart';
 
 class LoginController with ChangeNotifier {
   static String loginImage = "assets/images/LoginImage.png";
