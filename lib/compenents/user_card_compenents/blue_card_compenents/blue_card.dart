@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phonedirectory/compenents/user_card_compenents/blue_card_compenents/user_tag_photo.dart';
-
 import '../../../constants/colors.dart';
-import '../../../core/custom_bak_button.dart';
 import 'contact_box_row.dart';
-import 'edit_user_button.dart';
+import 'top_row.dart';
 
 final class BlueCard extends StatelessWidget {
   @override
@@ -22,13 +20,7 @@ final class BlueCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomBackButton(),
-                EditUserButton(),
-              ],
-            ),
+            TapRow(),
             UserPT(),
             ContactBoxRow(),
           ],

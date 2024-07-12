@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
+import '../constants/colors.dart';
 
-final class UserBodyButton extends StatelessWidget {
-  const UserBodyButton({
+final class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton({
     super.key,
     required this.onTap,
     required this.buttonTitle,
+    this.titleColor = blue,
   });
   final VoidCallback onTap;
   final String buttonTitle;
+  final Color titleColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,10 @@ final class UserBodyButton extends StatelessWidget {
           onPressed: onTap,
           child: Text(
             buttonTitle,
-            style:
-                Theme.of(context).textTheme.labelLarge?.copyWith(color: blue),
+            style: Theme.of(context)
+                .textTheme
+                .labelLarge
+                ?.copyWith(color: titleColor),
           )),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
-import 'userListTile.dart';
+import 'user_list_tile.dart';
 
 final class UserList extends StatelessWidget {
   @override
@@ -18,8 +18,8 @@ final class UserList extends StatelessWidget {
                 child: ListView.separated(
                     separatorBuilder: (context, index) => const Divider(),
                     itemCount: 5,
-                    itemBuilder: (context, index) => UserListTile(
-                          Tag: "Kankam",
+                    itemBuilder: (context, index) => const UserListTile(
+                          tag: "Kankam",
                           iamgePath: "",
                         )),
               ),

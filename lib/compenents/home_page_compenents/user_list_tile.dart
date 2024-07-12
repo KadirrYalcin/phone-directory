@@ -5,10 +5,10 @@ class UserListTile extends StatelessWidget {
   const UserListTile({
     super.key,
     required this.iamgePath,
-    required this.Tag,
+    required this.tag,
   });
   final String iamgePath;
-  final String Tag;
+  final String tag;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class UserListTile extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => UserCardPage()));
+                builder: (BuildContext context) => const UserCardPage()));
       },
       child: Row(
         children: [
@@ -28,7 +28,7 @@ class UserListTile extends StatelessWidget {
             ),
           ),
           Text(
-            Tag,
+            tag,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ],

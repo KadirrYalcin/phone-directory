@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../controller/user_card_controller.dart';
+import '../../core/custom_elevated_button.dart';
 import '../../core/white_backgrounded_Card.dart';
-import 'user_body_button.dart';
 
 final class UserCardBody extends StatelessWidget {
   @override
@@ -9,19 +9,19 @@ final class UserCardBody extends StatelessWidget {
     return WhiteBackgroundedCard(
       child: Column(
         children: [
-          UserBodyButton(
+          CustomElevatedButton(
             buttonTitle: UserCardController.sendMessage,
             onTap: () {
               UserCardController.sendTheMessage();
             },
           ),
-          UserBodyButton(
+          CustomElevatedButton(
             buttonTitle: UserCardController.shareUser,
             onTap: () {
               UserCardController.shareTheUser();
             },
           ),
-          UserBodyButton(
+          CustomElevatedButton(
             buttonTitle: UserCardController.addFastCall,
             onTap: () {
               UserCardController.addFastCallTheUser();
